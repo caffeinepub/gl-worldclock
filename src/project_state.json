@@ -1,0 +1,130 @@
+{
+  "schemaVersion": "1.0.0",
+  "projectStateVersion": 7,
+  "summary": "Build a simple app that displays world time.",
+  "architectural_notes": [
+    "Visual theme direction: black background with rainbow/chroma-spectrum foreground (text and non-surface elements)."
+  ],
+  "known_issues": [
+    "Some text colors currently match or are too close to the black background, making text unreadable."
+  ],
+  "isFixRequest": true,
+  "existing_features": [
+    {
+      "id": "feature-create-a-single-page-ui-that-displays-the-current-time-and-date-for-multiple-world-time-zones-e-g-utc-new-york-london-berlin-dubai-mumbai-singapore-tokyo-sydney",
+      "title": "Create a single-page UI that displays the current time and date for multiple world time zones (e.g., UTC, New York, London, Berlin, Dubai, Mumbai, Singapore, Tokyo, Sydney).",
+      "reqIds": [
+        "REQ-1"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-the-displayed-times-in-real-time-at-least-once-per-second-while-the-page-is-open",
+      "title": "Update the displayed times in real time (at least once per second) while the page is open.",
+      "reqIds": [
+        "REQ-2"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-a-simple-time-zone-selection-control-that-lets-the-user-add-remove-time-zones-from-the-dashboard-from-a-predefined-list",
+      "title": "Add a simple time zone selection control that lets the user add/remove time zones from the dashboard from a predefined list.",
+      "reqIds": [
+        "REQ-3"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-persist-the-user-s-selected-time-zones-in-browser-storage-so-the-dashboard-restores-the-same-selection-on-reload",
+      "title": "Persist the user’s selected time zones in browser storage so the dashboard restores the same selection on reload.",
+      "reqIds": [
+        "REQ-4"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-apply-a-coherent-visual-theme-across-the-app-colors-typography-spacing-and-component-styling-with-a-distinct-style-appropriate-for-a-world-clock-dashboard-avoid-blue-purple-as-primary-colors",
+      "title": "Apply a coherent visual theme across the app (colors, typography, spacing, and component styling) with a distinct style appropriate for a world clock dashboard (avoid blue/purple as primary colors).",
+      "reqIds": [
+        "REQ-5"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-the-generated-static-hero-image-asset-to-the-ui-and-display-it-in-the-header-area-of-the-page",
+      "title": "Add the generated static hero image asset to the UI and display it in the header area of the page.",
+      "reqIds": [
+        "REQ-6"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-the-app-visual-theme-so-the-overall-page-background-is-black-while-foreground-elements-text-icons-and-interactive-elements-that-sit-on-top-of-the-page-background-use-a-rainbow-chroma-spectrum-styling",
+      "title": "Update the app visual theme so the overall page background is black, while foreground elements (text, icons, and interactive elements that sit on top of the page background) use a rainbow/chroma-spectrum styling.",
+      "reqIds": [
+        "REQ-7"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-rename-the-app-to-gl-worldclock-wherever-the-app-name-is-shown-to-the-user-including-the-browser-tab-title-and-the-main-header-title",
+      "title": "Rename the app to “gl.WorldClock” wherever the app name is shown to the user, including the browser tab title and the main header title.",
+      "reqIds": [
+        "REQ-8"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-fix-ui-text-contrast-so-all-user-visible-text-is-clearly-readable-against-the-black-background-across-the-dashboard-and-time-zone-selector-avoid-any-foreground-text-colors-that-are-the-same-as-or-too-close-to-the-background-color",
+      "title": "Fix UI text contrast so all user-visible text is clearly readable against the black background across the dashboard and time zone selector (avoid any foreground text colors that are the same as, or too close to, the background color).",
+      "reqIds": [
+        "REQ-9"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-for-each-displayed-time-zone-card-compute-and-display-a-day-night-status-for-that-location-based-on-the-current-local-time-in-that-time-zone-and-show-a-indicator-that-changes-color-by-status-yellow-for-day-blue-for-night",
+      "title": "For each displayed time zone card, compute and display a day/night status for that location based on the current local time in that time zone, and show a ✦ indicator that changes color by status (yellow for Day, blue for Night).",
+      "reqIds": [
+        "REQ-10"
+      ],
+      "version": 1
+    }
+  ],
+  "new_feature_requests": [
+    {
+      "id": "AR-1",
+      "summary": "Create a simple app that shows the current time in multiple world time zones",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-2",
+      "summary": "Update the app visual theme to use a black background with rainbow/chroma-spectrum styling for text and other foreground elements",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-3",
+      "summary": "Fix text contrast/legibility so all text is clearly visible against the black background (avoid foreground colors matching background)",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-4",
+      "summary": "Add a day/night status indicator for each displayed city/time zone",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-5",
+      "summary": "Display a ✦ icon per city that changes color by status: yellow for day, blue for night",
+      "reqIds": [],
+      "status": "pending"
+    }
+  ],
+  "gameProjectType": "none",
+  "projectName": "gl.WorldClock",
+  "clarification_mode": "instant",
+  "clarification_rounds": 0
+}

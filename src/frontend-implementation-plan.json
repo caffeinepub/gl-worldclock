@@ -1,0 +1,56 @@
+{
+  "kind": "implementation_plan",
+  "version": "1.0",
+  "title": "Improve text contrast and add per-timezone day/night status indicator",
+  "requirements": [
+    {
+      "id": "REQ-9",
+      "summary": "Increase UI text contrast across dashboard and time zone selector so all text remains legible on black background in all states.",
+      "acceptanceCriteria": [
+        "All headings, body text, helper text (including muted/secondary text), button labels, badges, and list items are readable on the black background with no text appearing effectively invisible.",
+        "Time zone selector content (labels, timezone IDs, 'Add' badge, and empty-state text) remains legible in both normal and hover states.",
+        "No text uses a black (or near-black) color on a black (or near-black) surface, including inside cards, badges, inputs, and buttons."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/index.css",
+          "operation": "modify",
+          "description": "Adjust theme CSS variables (especially foreground and muted-foreground) and any relevant global utility styling so secondary/helper text and component text tokens remain clearly readable against the black background throughout the app. (Uses shadcn-ui theming via CSS variables; verify the component's usage instructions before implementing.)"
+        },
+        {
+          "path": "frontend/src/pages/WorldTimeDashboard.tsx",
+          "operation": "modify",
+          "description": "Audit and update any dashboard-specific text color classes that could reduce contrast (e.g., muted text, icons, and empty-state content) to ensure readable foreground colors on black/chroma surfaces in both default and interactive states. (Uses shadcn-ui components like Button/Card; verify the component's usage instructions before implementing.)"
+        },
+        {
+          "path": "frontend/src/components/TimeZoneSelector.tsx",
+          "operation": "modify",
+          "description": "Ensure time zone selector list items, timezone ID helper text, the 'Add' badge, and empty-state messaging keep sufficient contrast in normal and hover states (including hover background changes). Prefer explicit text-* token classes aligned with theme variables where needed. (Uses shadcn-ui Input/Badge/ScrollArea/Button; verify the component's usage instructions before implementing.)"
+        },
+        {
+          "path": "frontend/src/components/TimeZoneClockCard.tsx",
+          "operation": "modify",
+          "description": "Verify and adjust card text styling (title, UTC offset badge, time/date, remove button hover state) so no text becomes near-black on dark surfaces; align with updated theme tokens for consistent readability. (Uses shadcn-ui Card/Badge/Button; verify the component's usage instructions before implementing.)"
+        }
+      ]
+    },
+    {
+      "id": "REQ-10",
+      "summary": "Compute and display a per-card Day/Night status based on the card’s IANA time zone and show a color-changing ✦ indicator that updates automatically.",
+      "acceptanceCriteria": [
+        "Each TimeZoneClockCard displays a clear status label in English: \"Day\" or \"Night\".",
+        "Each TimeZoneClockCard displays a ✦ symbol alongside the status.",
+        "The ✦ symbol is yellow when status is Day and blue when status is Night.",
+        "The day/night status updates automatically as time advances (without requiring a page refresh) and is calculated per-card using that card’s IANA time zone.",
+        "The status label and ✦ remain clearly visible against the app’s black/chroma theme."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/TimeZoneClockCard.tsx",
+          "operation": "modify",
+          "description": "Add day/night computation using the passed `now` and the card’s IANA time zone (via Intl formatting to get local hour), define a simple threshold-based rule (non-sunrise/sunset) to label Day vs Night, and render a status row that includes a ✦ symbol colored yellow for Day and blue for Night; ensure the status remains high-contrast on the black theme and updates as `now` updates. (Uses shadcn-ui Card layout; verify the component's usage instructions before implementing.)"
+        }
+      ]
+    }
+  ]
+}

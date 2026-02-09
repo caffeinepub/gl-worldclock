@@ -1,0 +1,21 @@
+{
+  "backend/main.mo": "Empty Motoko actor with no implemented methods.",
+  "feature_evidence.json": "Defines feature evidence reports linking features to affected frontend files and components.",
+  "frontend-file-summaries.txt": "Lists prewritten summaries for major frontend files in the project.",
+  "frontend/index.css": "Global Tailwind-based OKLCH theme variables and base styles for light and dark mode.",
+  "frontend/index.html": "HTML shell with root div and module script loading the React app.",
+  "frontend/src/App.tsx": "Main app component that renders the WorldTimeDashboard.",
+  "frontend/src/components/TimeZoneClockCard.tsx": "Card showing time, date, UTC offset, and day/night status for a selected time zone with remove support.",
+  "frontend/src/components/TimeZoneSelector.tsx": "Searchable selector for adding time zones, filtering out already-selected ones.",
+  "frontend/src/hooks/useActor.ts": "Hook creating and caching a backend actor based on Internet Identity, with query invalidation on change.",
+  "frontend/src/hooks/useInternetIdentity.ts": "Context and hooks for managing Internet Identity login, state restoration, and AuthClient setup.",
+  "frontend/src/hooks/useLocalStorageState.ts": "Hook syncing state to localStorage with JSON serialization and error handling.",
+  "frontend/src/hooks/useNow.ts": "Hook returning a Date updated every second.",
+  "frontend/src/hooks/useQueries.ts": "Empty placeholder file for backend queries.",
+  "frontend/src/index.css": "Defines Tailwind layers, theme variables, dark mode values, and custom chroma-gradient utility classes.",
+  "frontend/src/lib/timezones.ts": "Exports a TimeZoneInfo interface and a predefined list of common global time zones.",
+  "frontend/src/main.tsx": "Bootstraps the React app, wrapping it with React Query and Internet Identity providers.",
+  "frontend/src/pages/WorldTimeDashboard.tsx": "Implements the main dashboard UI for displaying, adding, and removing world time zone clocks.",
+  "frontend/tailwind.config.js": "Configures Tailwind with custom colors, fonts, animations, and plugins for the app's chroma theme.",
+  "project_state.json": "Stores project metadata, requirements, theme notes, and known issues for the world clock app."
+}

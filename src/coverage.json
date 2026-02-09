@@ -1,0 +1,57 @@
+{
+  "kind": "coverage_report",
+  "version": "1.0",
+  "generatedAt": "2026-02-09T14:09:11.137Z",
+  "sources": {
+    "buildRequest": true,
+    "implementationPlan": true
+  },
+  "requirements": {
+    "total": 2,
+    "implemented": 2,
+    "items": [
+      {
+        "id": "REQ-10",
+        "summary": "For each displayed time zone card, compute and display a day/night status for that location based on the current local time in that time zone, and show a ✦ indicator that changes color by status (yellow for Day, blue for Night).",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/components/TimeZoneClockCard.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/components/TimeZoneClockCard.tsx"
+        ]
+      },
+      {
+        "id": "REQ-9",
+        "summary": "Fix UI text contrast so all user-visible text is clearly readable against the black background across the dashboard and time zone selector (avoid any foreground text colors that are the same as, or too close to, the background color).",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/index.css",
+          "frontend/src/pages/WorldTimeDashboard.tsx",
+          "frontend/src/components/TimeZoneSelector.tsx",
+          "frontend/src/components/TimeZoneClockCard.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/index.css",
+          "frontend/src/pages/WorldTimeDashboard.tsx",
+          "frontend/src/components/TimeZoneSelector.tsx",
+          "frontend/src/components/TimeZoneClockCard.tsx"
+        ]
+      }
+    ]
+  },
+  "changedFiles": [
+    "build-request.json",
+    "feature_evidence.json",
+    "frontend-file-summaries.txt",
+    "frontend-implementation-plan.json",
+    "frontend/src/components/TimeZoneClockCard.tsx",
+    "frontend/src/components/TimeZoneSelector.tsx",
+    "frontend/src/index.css",
+    "frontend/src/pages/WorldTimeDashboard.tsx",
+    "project_state.json",
+    "scratch/component-selection.json",
+    "spec.md",
+    "spec_vs_diff_report.json"
+  ]
+}

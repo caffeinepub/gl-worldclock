@@ -1,0 +1,13 @@
+{
+  "frontend/src/App.tsx": "Main application entry point that renders the WorldTimeDashboard component.",
+  "frontend/src/pages/WorldTimeDashboard.tsx": "Primary dashboard page displaying world time zones with rainbow chroma styling and improved text contrast for all UI elements including empty states and helper text.",
+  "frontend/src/components/TimeZoneClockCard.tsx": "Reusable card component displaying a single time zone's current time, date, UTC offset, and day/night status with a color-changing ✦ symbol (yellow for day, blue for night) that updates automatically based on local hour calculation.",
+  "frontend/src/components/TimeZoneSelector.tsx": "Modal selector component with search functionality for adding new time zones from the predefined list, with improved text contrast using explicit foreground color classes.",
+  "frontend/src/hooks/useNow.ts": "Custom React hook providing a shared Date object that updates every second for synchronized time display across all clocks.",
+  "frontend/src/hooks/useLocalStorageState.ts": "Custom React hook for persisting and retrieving JSON-serializable state in browser localStorage with error handling.",
+  "frontend/src/hooks/useQueries.ts": "Empty placeholder file as no backend queries are required for this client-side only application.",
+  "frontend/src/lib/timezones.ts": "Defines the TimeZoneInfo interface and exports a comprehensive list of 55+ world time zones with IANA identifiers, labels, and regions.",
+  "frontend/src/index.css": "Global styles with OKLCH color system featuring true black background and improved muted-foreground lightness (0.75) for better text contrast, plus rainbow chroma spectrum utility classes with animated gradient effects.",
+  "frontend/tailwind.config.js": "Tailwind configuration with custom font families, extended color tokens, border radius, shadows, and animations.",
+  "frontend/index.html": "HTML entry point with document title set to \"gl.WorldClock\" for browser tab display."
+}

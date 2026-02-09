@@ -1,0 +1,149 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    :root {
+        --radius: 0.75rem;
+        --background: 0 0 0;
+        --foreground: 0.95 0 0;
+        --card: 0.12 0 0;
+        --card-foreground: 0.95 0 0;
+        --popover: 0.15 0 0;
+        --popover-foreground: 0.95 0 0;
+        --primary: 0.65 0.2 45;
+        --primary-foreground: 0 0 0;
+        --secondary: 0.2 0.01 0;
+        --secondary-foreground: 0.95 0 0;
+        --muted: 0.25 0.01 0;
+        --muted-foreground: 0.75 0.01 0;
+        --accent: 0.3 0.02 0;
+        --accent-foreground: 0.95 0 0;
+        --destructive: 0.55 0.22 25;
+        --destructive-foreground: 0.95 0 0;
+        --border: 0.25 0.01 0;
+        --input: 0.25 0.01 0;
+        --ring: 0.65 0.2 45;
+        --chart-1: 0.65 0.2 45;
+        --chart-2: 0.6 0.15 120;
+        --chart-3: 0.55 0.18 200;
+        --chart-4: 0.7 0.15 30;
+        --chart-5: 0.5 0.2 280;
+    }
+
+    .dark {
+        --background: 0 0 0;
+        --foreground: 0.95 0 0;
+        --card: 0.12 0 0;
+        --card-foreground: 0.95 0 0;
+        --popover: 0.15 0 0;
+        --popover-foreground: 0.95 0 0;
+        --primary: 0.65 0.2 45;
+        --primary-foreground: 0 0 0;
+        --secondary: 0.2 0.01 0;
+        --secondary-foreground: 0.95 0 0;
+        --muted: 0.25 0.01 0;
+        --muted-foreground: 0.75 0.01 0;
+        --accent: 0.3 0.02 0;
+        --accent-foreground: 0.95 0 0;
+        --destructive: 0.6 0.25 25;
+        --destructive-foreground: 0.95 0 0;
+        --border: 0.25 0.01 0;
+        --input: 0.25 0.01 0;
+        --ring: 0.65 0.2 45;
+        --chart-1: 0.7 0.22 45;
+        --chart-2: 0.65 0.18 120;
+        --chart-3: 0.6 0.2 200;
+        --chart-4: 0.75 0.18 30;
+        --chart-5: 0.55 0.22 280;
+    }
+
+    * {
+        @apply border-border;
+    }
+    
+    body {
+        @apply bg-background text-foreground;
+        font-feature-settings: "rlig" 1, "calt" 1;
+    }
+}
+
+@layer utilities {
+    /* Rainbow chroma gradient text */
+    .text-chroma {
+        background: linear-gradient(
+            90deg,
+            oklch(0.7 0.25 0) 0%,
+            oklch(0.7 0.25 30) 14%,
+            oklch(0.7 0.25 60) 28%,
+            oklch(0.7 0.25 120) 42%,
+            oklch(0.7 0.25 180) 57%,
+            oklch(0.7 0.25 240) 71%,
+            oklch(0.7 0.25 300) 85%,
+            oklch(0.7 0.25 360) 100%
+        );
+        background-size: 200% auto;
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        animation: chroma-shift 8s linear infinite;
+    }
+
+    /* Rainbow chroma gradient for icons/elements */
+    .chroma-icon {
+        background: linear-gradient(
+            135deg,
+            oklch(0.7 0.25 0) 0%,
+            oklch(0.7 0.25 30) 14%,
+            oklch(0.7 0.25 60) 28%,
+            oklch(0.7 0.25 120) 42%,
+            oklch(0.7 0.25 180) 57%,
+            oklch(0.7 0.25 240) 71%,
+            oklch(0.7 0.25 300) 85%,
+            oklch(0.7 0.25 360) 100%
+        );
+        background-size: 200% 200%;
+        animation: chroma-shift 8s linear infinite;
+    }
+
+    /* Chroma animation */
+    @keyframes chroma-shift {
+        0% {
+            background-position: 0% 50%;
+        }
+        50% {
+            background-position: 100% 50%;
+        }
+        100% {
+            background-position: 0% 50%;
+        }
+    }
+
+    /* Chroma border glow */
+    .chroma-border {
+        position: relative;
+        border: 2px solid transparent;
+        background: linear-gradient(oklch(0.12 0 0), oklch(0.12 0 0)) padding-box,
+                    linear-gradient(
+                        90deg,
+                        oklch(0.7 0.25 0),
+                        oklch(0.7 0.25 60),
+                        oklch(0.7 0.25 120),
+                        oklch(0.7 0.25 180),
+                        oklch(0.7 0.25 240),
+                        oklch(0.7 0.25 300),
+                        oklch(0.7 0.25 360)
+                    ) border-box;
+        background-size: 100% 100%, 200% 100%;
+        animation: chroma-border-shift 6s linear infinite;
+    }
+
+    @keyframes chroma-border-shift {
+        0% {
+            background-position: 0% 0%, 0% 0%;
+        }
+        100% {
+            background-position: 0% 0%, 200% 0%;
+        }
+    }
+}

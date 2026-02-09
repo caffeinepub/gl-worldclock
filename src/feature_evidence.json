@@ -1,0 +1,44 @@
+{
+  "kind": "feature_evidence_report",
+  "features": [
+    {
+      "featureId": "feature-fix-ui-text-contrast-so-all-user-visible-text-is-clearly-readable-against-the-black-background-across-the-dashboard-and-time-zone-selector-avoid-any-foreground-text-colors-that-are-the-same-as-or-too-close-to-the-background-color",
+      "featureTitle": "Fix UI text contrast so all user-visible text is clearly readable against the black background across the dashboard and time zone selector (avoid any foreground text colors that are the same as, or too close to, the background color).",
+      "files": [
+        "frontend/src/components/TimeZoneClockCard.tsx",
+        "frontend/src/components/TimeZoneSelector.tsx",
+        "frontend/src/index.css",
+        "frontend/src/pages/WorldTimeDashboard.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-9"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-for-each-displayed-time-zone-card-compute-and-display-a-day-night-status-for-that-location-based-on-the-current-local-time-in-that-time-zone-and-show-a-indicator-that-changes-color-by-status-yellow-for-day-blue-for-night",
+      "featureTitle": "For each displayed time zone card, compute and display a day/night status for that location based on the current local time in that time zone, and show a ✦ indicator that changes color by status (yellow for Day, blue for Night).",
+      "files": [
+        "frontend/src/components/TimeZoneClockCard.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-10"
+      ],
+      "confidence": "high"
+    }
+  ]
+}

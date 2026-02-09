@@ -1,0 +1,58 @@
+{
+  "kind": "build_request",
+  "title": "Improve text legibility and add day/night status with color-changing ✦ indicator per time zone",
+  "priority": "normal",
+  "requirements": [
+    {
+      "id": "REQ-9",
+      "text": "Fix UI text contrast so all user-visible text is clearly readable against the black background across the dashboard and time zone selector (avoid any foreground text colors that are the same as, or too close to, the background color).",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-4"
+        ],
+        "quotes": [
+          "Make every text clear, because there are some text that matches the background color that i cant see it"
+        ]
+      },
+      "acceptanceCriteria": [
+        "All headings, body text, helper text (including muted/secondary text), button labels, badges, and list items are readable on the black background with no text appearing effectively invisible.",
+        "Time zone selector content (labels, timezone IDs, 'Add' badge, and empty-state text) remains legible in both normal and hover states.",
+        "No text uses a black (or near-black) color on a black (or near-black) surface, including inside cards, badges, inputs, and buttons."
+      ]
+    },
+    {
+      "id": "REQ-10",
+      "text": "For each displayed time zone card, compute and display a day/night status for that location based on the current local time in that time zone, and show a ✦ indicator that changes color by status (yellow for Day, blue for Night).",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-4"
+        ],
+        "quotes": [
+          "add the status of each city/country like is it day or night. Add ✦ that changes color depending the status like i said earlier, yellow for day, blue for night"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Each TimeZoneClockCard displays a clear status label in English: \"Day\" or \"Night\".",
+        "Each TimeZoneClockCard displays a ✦ symbol alongside the status.",
+        "The ✦ symbol is yellow when status is Day and blue when status is Night.",
+        "The day/night status updates automatically as time advances (without requiring a page refresh) and is calculated per-card using that card’s IANA time zone.",
+        "The status label and ✦ remain clearly visible against the app’s black/chroma theme."
+      ]
+    }
+  ],
+  "constraints": [
+    "Frontend code under the following immutable paths must not be edited directly: frontend/src/hooks/useInternetIdentity.ts, frontend/src/hooks/useInternetIdentity.tsx, frontend/src/hooks/useActor.ts, frontend/src/main.tsx, frontend/src/components/ui/*.",
+    "Backend must remain single-actor; no new backend work is required for these UI-only changes."
+  ],
+  "nonGoals": [
+    "Adding sunrise/sunset-accurate day/night calculations based on latitude/longitude.",
+    "Adding real-time communication features (e.g., WebSockets) or backend persistence for day/night status.",
+    "Changing the predefined time zone list beyond what is required to compute/display status."
+  ],
+  "imageRequirements": {
+    "required": [],
+    "edits": []
+  }
+}
